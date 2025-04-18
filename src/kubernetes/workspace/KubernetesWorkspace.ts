@@ -152,7 +152,7 @@ export default class KubernetesWorkspace {
         return resources;
     }
 
-    private getHost(subdomain?: string) {
+    public getHost(subdomain?: string) {
         let domain = this.config.domain.replace("%s", subdomain || "");
         if (!subdomain) {
             domain = domain.substring(1); // remove separator

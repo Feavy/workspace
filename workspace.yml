@@ -1,7 +1,7 @@
 # version: 1
-name: "ppbo"
-namespace: "ppbo"
-domain: "%s-ppbo.feavy.world"
+name: "my-workspace"
+namespace: "workspaces"
+domain: "%s-my-workspace.feavy.world"
 nodeSelector:
   kubernetes.io/arch: "amd64"
 pvc:

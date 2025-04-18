@@ -3,10 +3,10 @@ import './utils/ArrayUtils';
 import WorkspaceConfigRenderer from './config/WorkspaceConfigRenderer';
 import { fromError } from 'zod-validation-error';
 import KubernetesWorkspace from './kubernetes/workspace/KubernetesWorkspace';
-import * as yaml from 'yaml';
 import * as dotenv from 'dotenv';
 import KubernetesClient from "./kubernetes/KubernetesClient";
 import {dataValuesFromBase64} from "./kubernetes/utils/encoding";
+import KubernetesWorkspaceComponent from './kubernetes/workspace/KubernetesWorkspaceComponent';
 
 /*
 CLI Parameters:
@@ -36,6 +36,7 @@ dotenv.config();
         console.log("Deploying workspace...");
         await client.deploy(kubernetesWorkspace, true);
         console.log("Workspace deployed successfully!");
+        console.log("Available at https://" + kubernetesWorkspace.getHost(KubernetesWorkspaceComponent.NAME));
     } catch (error: any) {
         const validationError = fromError(error);
         console.error(error);

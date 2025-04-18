@@ -1,7 +1,7 @@
 {
     "gateway": {
         "image": "ghcr.io/feaworkspace/gateway",
-        "tag": "main-7f6554a"
+        "tag": "main-38f557e"
     },
     "theia": {
         "image": "ghcr.io/feaworkspace/theia-ide",
